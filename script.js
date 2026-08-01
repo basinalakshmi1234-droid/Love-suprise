@@ -87,3 +87,12 @@ function goToLovePage() {
 
   },250);
       }
+const noBtn = document.getElementById("no");
+
+if(noBtn){
+  noBtn.onmouseover = () => {
+    noBtn.style.position = "absolute";
+    noBtn.style.left = Math.random()*80 + "vw";
+    noBtn.style.top = Math.random()*80 + "vh";
+  };
+}
