@@ -1,1 +1,114 @@
-body{margin:0;font-family:Arial;background:#ffd6e7;display:flex;justify-content:center;align-items:center;height:100vh}.card{text-align:center;background:white;padding:25px;border-radius:18px}button{padding:12px 22px}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+background:linear-gradient(135deg,#ff4d88,#ff80ab,#ffc1e3);
+animation:bg 8s infinite alternate;
+}
+
+@keyframes bg{
+0%{filter:hue-rotate(0deg);}
+100%{filter:hue-rotate(35deg);}
+}
+
+.card{
+width:90%;
+max-width:380px;
+padding:30px;
+border-radius:25px;
+text-align:center;
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(18px);
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+color:white;
+animation:pop .8s ease;
+z-index:2;
+}
+
+@keyframes pop{
+from{transform:scale(.8);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+h1{
+font-size:38px;
+margin-bottom:15px;
+text-shadow:0 0 15px #fff;
+}
+
+#typing{
+height:35px;
+font-size:24px;
+color:#fff;
+margin-bottom:15px;
+}
+
+p{
+font-size:17px;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+button{
+padding:15px 30px;
+border:none;
+border-radius:40px;
+font-size:18px;
+cursor:pointer;
+background:white;
+color:#ff2e75;
+font-weight:bold;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 25px white;
+}
+
+#love{
+display:none;
+margin-top:25px;
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+overflow:hidden;
+top:0;
+left:0;
+pointer-events:none;
+}
+
+.hearts::before{
+content:"❤️ ❤️ 💖 💕 ❤️ 💗 💞";
+position:absolute;
+font-size:28px;
+width:100%;
+animation:fall 12s linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-120%);
+}
+100%{
+transform:translateY(120vh);
+}
+  }
