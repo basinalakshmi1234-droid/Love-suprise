@@ -1,0 +1,1 @@
+function openHeart(){document.getElementById('msg').style.display='block';}
