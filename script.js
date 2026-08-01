@@ -28,3 +28,62 @@ function openHeart() {
     }
   );
 }
+function goToLovePage() {
+  document.body.innerHTML = `
+  <style>
+    body{
+      margin:0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      background:linear-gradient(135deg,#ff4d6d,#ff8fab,#ffc2d1);
+      overflow:hidden;
+      font-family:Arial,sans-serif;
+      color:white;
+      text-align:center;
+    }
+    h1{
+      font-size:42px;
+      animation:zoom 1s infinite alternate;
+      text-shadow:0 0 20px #fff;
+    }
+    p{
+      font-size:24px;
+      margin-top:15px;
+    }
+    @keyframes zoom{
+      from{transform:scale(1);}
+      to{transform:scale(1.15);}
+    }
+    .heart{
+      position:fixed;
+      top:-30px;
+      font-size:30px;
+      animation:fall 5s linear infinite;
+    }
+    @keyframes fall{
+      to{
+        transform:translateY(110vh);
+      }
+    }
+  </style>
+
+  <h1>🫀 I Knew It Bangaram 🫀</h1>
+  <p>I Love You Forever Harshini ❤️<br>You're My Everything 🥹💖</p>
+  `;
+
+  setInterval(()=>{
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="💖";
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=(Math.random()*3+3)+"s";
+    document.body.appendChild(h);
+
+    setTimeout(()=>{
+      h.remove();
+    },6000);
+
+  },250);
+      }
